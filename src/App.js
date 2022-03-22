@@ -42,6 +42,14 @@ function App() {
 
 
   }
+
+  const onDelete=(todo)=>{
+    setTodos(todos.filter((e) => {
+      return e !== todo;
+
+    }))
+  }
+
   const [todos, setTodos] = useState(initTodo);
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
@@ -55,7 +63,7 @@ function App() {
            return(
              <>
              <Addtodo addTodo={addTodo} />
-      <Todos todos={todos}  />
+      <Todos todos={todos}  onDelete={onDelete} />
              </>
            )
 

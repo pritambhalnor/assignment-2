@@ -1,6 +1,9 @@
 import React from 'react'
 
-export default function Todo({todo}) {
+export default function Todo({todo,onDelete}) {
+ let cp={
+   cursor:"pointer"
+ }
   return (
     <div className='my-2'>
       <table>
@@ -12,6 +15,9 @@ export default function Todo({todo}) {
         <tr>
           <td>Last Name : </td>
           <td>{todo.lastname}</td>
+          </tr>
+          <tr>
+            <td className='btn-sm btn-danger text-center ' style={cp} onClick={()=>{onDelete(todo)}}>Delete</td>
           </tr>
         </tbody>
       </table>

@@ -13,7 +13,7 @@ export default function Todos(props) {
       <button className='btn-sm btn-danger' onClick={()=>{clear()}}>Clear All</button> <br />
      {props.todos.length===0?  "No First & Last Names to display":
       props.todos.map((todo) => {
-        return <Todo todo={todo} key={todo.sno} />
+        return <Todo todo={todo} key={todo.sno} onDelete={props.onDelete} />
       })}
     </div>
   )
